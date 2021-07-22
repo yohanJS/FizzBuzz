@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project by Yohan Garcia</title>
+    <title>FizzBuzz App: A Coding Project by Yohan Garcia</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -33,13 +33,13 @@
                         <a class="nav-link" href="./index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./app.html">The App</a>
+                        <a class="nav-link active" aria-current="page" href="./app.html">FizzBuzz App</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="https://github.com/yohanJS/miniSitesJS">Git Repo</a>
+                        <a class="nav-link" target="_blank" href="https://github.com/yohanJS/FizzBuzz">Git Repo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" target="_blank" href="https://www.yohancraft.com/">About</a>
@@ -51,7 +51,45 @@
 
     <!--Main Section-->
     <main class="flex-shrink-0">
-
+        <div class="container mt-5 mb-5">
+            <div class="row row-cols-1 row-cols-md-2">
+                <div class="col border-end">
+                    <div>
+                        <h1 class="mt-2 txt-color">FizzBuzz: A Coding Project</h1>
+                        <h4 class="lead">A JavaScript  coding exercise using loops, and boolean logic. 
+                            Write a program that displays <strong>Fizz</strong> for numbers multiple of 3 
+                            and display <strong>Buzz</strong> for numbers multiple of 5. If the number is 
+                            multiple of 3 and 5 display <strong>FizzBuzz</strong> with a background color of
+                            orange.
+                        </h4>
+                        <h2 class="mt-4 border-1 border-bottom txt-color">Instruction</h2>
+                        <p>Enter a starting value and an ending value. Press the Button!</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <h5 class="mt-2 txt-color">Enter valid values</h5>
+                    <form class="row gy-2 gx-3">
+                        <div class="col">
+                            <input id="startValue" placeholder="start value" value="0" type="number"  aria-label="start value" class="form-control">
+                        </div>
+                        <div class="col">
+                            <input id="endValue" placeholder="end value" value="100" type="number"  aria-label="end value" class="form-control">
+                        </div>
+                        <div class="col-12">
+                            <button id="btnSubmit" type="button" class="btn btn-danger border text-light">FizzBuzz it!</button>
+                        </div>
+                    </form>
+                    <h2 class="mt-5 border-bottom">Results</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-sm">
+                            <tbody id="results">
+                                <!--Results will be added using JavaScript-->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <!--Footer Section-->

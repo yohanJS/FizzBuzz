@@ -9,6 +9,13 @@
 body {
     color: var(--black-color);
 }
+.bold {
+    font-weight: bold;
+}
+.bold-orange {
+    font-weight: bold;
+    background-color: #F17720;
+}
 nav, footer {
     background: #000428;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 */

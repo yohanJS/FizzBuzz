@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project by Yohan Garcia</title>
+    <title>FizzBuzz App: A Coding Project by Yohan Garcia</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -38,13 +38,13 @@
                         <a class="nav-link" href="./index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./app.html">The App</a>
+                        <a class="nav-link" href="./app.html">FizzBuzz App</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="./code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="https://github.com/yohanJS/miniSitesJS">Git Repo</a>
+                        <a class="nav-link" target="_blank" href="https://github.com/yohanJS/FizzBuzz">Git Repo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" target="_blank" href="https://www.yohancraft.com/">About</a>
@@ -56,20 +56,102 @@
 
     <!--Main Section-->
     <main class="flex-shrink-0">
-        <div class="container py-4 px-5">
-            <h2 class="border-1 border-bottom txt-color px-5 m-5">The Code for Zerdred</h2>
-            <div class="row px-5 row-cols-1 row-cols-md-2">
-                <div class="col col-lg-8">
+        <div class="container mb-5">
+            <h2 class="border-1 border-bottom txt-color m-5">The Code for FizzBuzz App</h2>
+            <div class="row row-cols-1 row-cols-md-2">
+                <div class="col-12 col-lg-7">
                     <pre class="line-numbers"><code class="language-javascript">
-                        let helloWorld = () => {
-                            alert("Hello World");
-                        }                        
+"use strict"
+
+//retrieves the id of the HTML element
+let $ =(id)=> {
+    return document.getElementById(id);
+}
+//makes the even numbers BOLD
+let fizzBuzz = () => {
+
+    //this array will hold the numbers generated using a for loop
+    let numbers = [];
+
+    //get the start and end number from the user
+    //and convert them to a number
+    let startValue = parseInt($("startValue").value); 
+    let endValue = parseInt($("endValue").value);
+
+
+    //populate the array using the starting and ending values
+    for(startValue; startValue <=  endValue; startValue++) {
+        numbers.push(startValue);
+    }
+
+
+    //using the forEach function iterate over the numbers array
+    //and check for multiples of 3 and 5
+    numbers.forEach((num)=>{
+        
+        let row = $("results").insertRow();
+        let cell = row.insertCell();
+
+        if(num % 3 == 0 && num % 5 == 0) {
+            row.className = "bold-orange";
+            cell.innerHTML = "FizzBuzz";
+        } else if (num % 3 == 0){
+            row.className = "bold";
+            cell.innerHTML = "Fizz";
+        } else if(num % 5 == 0) {
+            row.className = "bold";
+            cell.innerHTML = "Buzz";
+        } else {
+            cell.innerHTML = num;
+        }
+
+    });
+
+}
+//when window loads
+window.onload = function() {
+    //when the event of click occurs trigger the fizzBuzz function
+    $("btnSubmit").onclick = function() {
+        //this statement resets the table body data
+        $("results").innerHTML = "";
+    
+        fizzBuzz();
+    }
+}                      
                     </code></pre>
                 </div>
-                <div class="col col-lg-4">
-                    <p>The Code is structured in one function.</p>
-                    <h5>Hello World</h5>
-                    <p>Hello World is a function that displays an alert with a message of "Hello World"</p>
+                <div class="col col-lg-5">
+                    <h6 class="txt-color">The Code is structured in two functions.</h6>
+                    <p>
+                        The first function simply uses a return statement 
+                        to grab the ID of a specific element, and return its value.
+                    </p>
+                    <p>
+                        Inside the second function, we declare an empty array. 
+                        This array will later be used to store the values between 
+                        the starting value and the ending value provided by the user.
+                    </p>
+                    <p>
+                        Then using <strong>$</strong> function we retrieve the starting value and the ending 
+                        value. We make sure that we convert the strings numbers to integers. 
+                        We then use a for loop to populate our empty array. The array will 
+                        have numbers ranging from the starting value and ending value.
+                    </p>
+                    <p>
+                        In the end we use the forEach() method to iterate over our array. 
+                        This method takes a callback function. Inside the callback function, 
+                        we then create a new row and a new cell. Using an if statement and the 
+                        % module operator, we check if the number is even. If the number is 
+                        indeed multiple of 3 we display <strong>Fizz</strong>, if the number is
+                        multiple of 5 we display <strong>Buzz</strong>. Then if the number is multiple of both 3, and 
+                        5 we display <strong>FizzBuzz</strong> with an orange background.
+                    </p>
+                    <p>
+                        Finally, in the end we use the window object and the onload method to load the script 
+                        just after the DOM has loaded. Inside the function we add an event listener that 
+                        listen if the button <strong>FizzBuzz it</strong> is clicked. When this event happens we call our 
+                        <strong>fizzBuzz</strong> function.
+                    </p>
                 </div>
             </div>
         </div>
@@ -108,14 +190,6 @@
     
     <!--linked prism js-->
     <script src="./js/prism.js"></script>
-    <script>
-        Prism.plugins.NormalizeWhitespace.setDefaults({
-        'remove-trailing': true,
-        'remove-indent': true,
-        'left-trim': true,
-        'right-trim': true
-        })
-    </script>
 </body>
 
 </html>
